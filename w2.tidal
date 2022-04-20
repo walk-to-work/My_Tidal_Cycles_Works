@@ -1,0 +1,21 @@
+setcps (100/60/4)
+
+let dj = (# hpf (slow 4 $ rangex 200 3000 saw)). (# hpq 0.4)
+
+d1 
+$ loopAt 1
+$ chop 16
+$ whenmod 8 6 dj
+$ jux (0.125 <~)
+$ iter 8
+$ chunk 4 ((slow 2).(# up 5))
+$ slice 16 (run(16))
+$ s "breaks125"
+# legato 1
+# coarse 4
+# shape 0.7
+# crush 4
+# djf (slow 1 $ range 0.2 0.95 saw)
+# room (slow 8 $ range 0.2 0.95 saw) # sz 0.95
+
+hush
